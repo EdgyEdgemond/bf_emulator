@@ -20,8 +20,8 @@ def jump_stack(code):
 def brainfuck_emulator(code, input):
     code, input = list(code), list(input)
 
-    output, memory, js = [], defaultdict(int), jump_stack(code)
-    ptr, i = 0, 0
+    ptr, i, output, memory = 0, 0, [], defaultdict(int)
+    js = jump_stack(code)
 
     while i < len(code):
         cmd = code[i]
