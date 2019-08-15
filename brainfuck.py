@@ -36,8 +36,8 @@ def brainfuck_emulator(code, input):
         if cmd == "+": memory[ptr] = (memory[ptr] + 1) % 256
         if cmd == "-": memory[ptr] = (memory[ptr] - 1) % 256
         # Loops
-        if cmd == "[" and memory[ptr] == 0: i = js[i]
-        if cmd == "]" and memory[ptr] != 0: i = js[i]
+        if cmd == "[": i = js[i] if memory[ptr] == 0 else i
+        if cmd == "]": i = js[i] if memory[ptr] != 0 else i
 
         i += 1
 
